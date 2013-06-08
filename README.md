@@ -6,6 +6,12 @@ jQuery Shadow Root
 // and no callback function is passed
 var shadow = $( "body" ).shadow();
 
+// you can also pass options for applyAuthorStyles and resetStyleInheritance
+var shadow = $( "body" ).shadow({
+  "applyAuthorStyles" : true,
+  "resetStyleInheritance" : true
+});
+
 // returns the selected elements
 var $els = $( "div" ).shadow();
 
