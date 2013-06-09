@@ -20,4 +20,12 @@ $( "div#shadow" ).shadow( function ( shadow ) {
   // do something with it
 });
 
+// you can also pass options to multiple elements at once
+$( "div#shadow" ).shadow({
+  "applyAuthorStyles" : true,
+  "resetStyleInheritance" : true
+}, function ( shadow ) {
+  // do something with it
+});
+
 ```
