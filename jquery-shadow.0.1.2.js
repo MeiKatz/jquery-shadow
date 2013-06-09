@@ -1,6 +1,6 @@
 /**
  * @author      Gregor Mitzka (gregor.mitzka@gmail.com)
- * @version     0.1.2
+ * @version     0.1.3
  * @date        2013-08-06
  * @licence     beer ware licence
  * ----------------------------------------------------------------------------
@@ -11,11 +11,13 @@
  * ----------------------------------------------------------------------------
  */
 (function ( $ ) {
-    $.fn.shadow = function ( callback ) {
+    $.fn.shadow = function ( options, callback ) {
         var $this = $( this );
 
-        if ( $this.length === 1 && typeof callback !== "function" ) {
-            var options = ( typeof callback === "object" ) ? callback : {};
+        callback = ( typeof callback !== "function" && typeof options === "function" ) ? options : null;
+        options  = ( typeof options  === "object" )                                    ? options : {};
+
+        if ( $this.length === 1 && callback != null ) {
             var el = this[ 0 ];
 
             if ( el.createShadowRoot && typeof el.shadowRoot !== "undefined" ) {
@@ -37,12 +39,12 @@
             return shadow;
         }
 
-        if ( typeof callback !== "function" ) {
+        if ( callback == null ) {
             return $this;
         }
 
         return $( this ).each(function() {
-            callback.call( this, $( this ).shadow() );
+            callback.call( this, $( this ).shadow( options ) );
         });
     };
 })( jQuery );
