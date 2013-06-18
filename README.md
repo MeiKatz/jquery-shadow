@@ -16,7 +16,7 @@ var shadow = $( "body" ).shadow({
 var $els = $( "div" ).shadow();
 
 // for multiple elements (or one) use the callback function instead
-$( "div#shadow" ).shadow( function ( shadow ) {
+$( "div#shadow" ).shadow(function ( shadow ) {
   // do something with it
 });
 
