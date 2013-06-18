@@ -1,6 +1,6 @@
 /**
  * @author      Gregor Mitzka (gregor.mitzka@gmail.com)
- * @version     0.1.3
+ * @version     0.1.4
  * @date        2013-08-06
  * @licence     beer ware licence
  * ----------------------------------------------------------------------------
@@ -43,7 +43,7 @@
             return $this;
         }
 
-        return $( this ).each(function() {
+        return $this.each(function() {
             callback.call( this, $( this ).shadow( options ) );
         });
     };
